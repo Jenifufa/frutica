@@ -1,0 +1,38 @@
+    #############################################
+    # TALLER CLASE
+    #############################################
+
+    def primerasNotas(self):
+        for i in range (len(self.__notas)):
+            if self.__notas[i] == 1.5:
+                self.__notas[i] = 2.5
+                contador += 1
+                if contador == 3:
+                    break
+            return self.__notas[i]
+    
+    def posicionTerceraNota(self):
+        contador = 0
+        for i in range(len(self.notas)):
+            if self.notas[i] == 5.0:
+                contador += 1
+                if contador == 3:
+                    return i
+        return -1
+
+    def reemplazarNota (self):
+        for i in range (len(self.__notas)):
+            if self.__notas[i] == 3.0:
+                self.__notas[i] = 0.0
+                contador += 1
+                if contador == 3:
+                    break
+            return self.__notas[i]
+        
+    def calcularMinimoSuma (self):
+        suma = 0
+        for i in range (len(self.__notas)):
+            suma += self.__notas[i]
+            if suma > 30:
+                return i + 1
+        return -1
