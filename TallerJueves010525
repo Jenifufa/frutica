@@ -1,0 +1,45 @@
+ #############################################
+    # TALLER JUEVES
+ #############################################
+   
+    def cambiarNotas(self):
+        for i in range(len(self.__notas)):
+            if self.__notas[i] > 4.0:
+                self.__notas[i] -= 0.5
+            elif self.__notas[i] < 2.0:
+                self.__notas[i] += 0.5
+        return self.__notas
+
+   
+    def darMenorNota(self):
+        menorNota = self.__notas[0]
+        for nota in self.__notas:
+            if nota < menorNota:
+                menorNota = nota
+        print(f"La menor nota del curso es: {menorNota}.")
+        return menorNota
+
+   
+    def darRangoConMasNotas(self):
+        rango1 = 0 # 0.0 a 1.99
+        rango2 = 0 # 2.0 a 3.49
+        rango3 = 0 # 3.5 a 5.0
+
+        for nota in self.__notas:
+            if 0.0 <= nota <= 1.99:
+                rango1 += 1
+            elif 2.0 <= nota <= 3.49:
+                rango2 += 1
+            elif 3.5 <= nota <= 5.0:
+                rango3 += 1
+
+        if rango1 >= rango2 and rango1 >= rango3:
+            print("El rango donde se encuentran la mayoria de notas es el Rango 1 (0.0 a 1.99).")
+            return 1
+        elif rango2 >= rango1 and rango2 >= rango3:
+            print("El rangodonde se encuentran la mayoria de notas es el Rango 2 (2.0 a 3.49).")
+            return 2
+        else:
+            print("El rango donde se encuentran la mayoria de notas es el Rango 3 (3.5 a 5.0).")
+            return 3
+    
