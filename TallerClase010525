@@ -18,7 +18,7 @@
             if self.__notas[i] == 5.0:
                 contador += 1
                 if contador == 3:
-                    return i
+                    return i + 1
         return -1
 
     def reemplazarNota(self):
