@@ -1,1 +1,46 @@
-040525
+    #############################################
+    #taller finde
+    #############################################
+
+    def reemplazarNota(self):
+        for i in range(len(self.__notas)):
+            if self.__notas[i] > 3.0:
+                break
+            self.__notas[i] = 0.0
+        return self.__notas
+
+    def calcularMinimoSuma(self):
+        suma = 0
+        for i in range(len(self.__notas)):
+            suma += self.__notas[i]
+            if suma > 30:
+                return i + 1 
+        return -1
+ 
+    #############################################
+    #taller finde
+    #############################################
+
+    def reemplazarNota(self):
+        for i in range(len(self.__notas)):
+            if self.__notas[i] > 3.0:
+                break
+            self.__notas[i] = 0.0
+        return self.__notas
+
+    def calcularMinimoSuma(self):
+        suma = 0
+        for i in range(len(self.__notas)):
+            suma += self.__notas[i]
+            if suma > 30:
+                return i + 1 
+        return -1
+ 
+    def notaMediana (self) :
+        notas_ordenadas = sorted(self.__notas)
+        n = len(notas_ordenadas)
+        if n % 2 == 0:
+            mediana = (notas_ordenadas[n//2 - 1] + notas_ordenadas[n//2]) / 2
+        else:
+            mediana = notas_ordenadas[n//2]
+        return mediana
